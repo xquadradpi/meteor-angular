@@ -1,0 +1,16 @@
+app:
+  image: jow/numenera
+  ports:
+    - "8080:3000"
+  links:
+    - mongo
+  environment:
+    - ROOT_URL=http://127.0.0.1:8080
+
+    - MONGO_URL=mongodb://mongo:27017/meteor
+
+mongo:
+  image: mongo:latest
+  ports:
+    - "127.0.0.1:27017:27017"
+  command: mongod --storageEngine=wiredTiger

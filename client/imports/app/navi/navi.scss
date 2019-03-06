@@ -1,0 +1,25 @@
+.middle {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+}
+
+.infotext {
+  visibility: hidden;
+  font-size: small;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  left: -100px;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.info:hover .infotext {
+  visibility: visible;
+}

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-dark bg-dark">
+    <button class="navbar-toggler navbar-toggler-right"
+            type="button"
+            (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{'show': toggleNav}">
+        <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let entry of naviEntries">
+                <button *ngIf="allowItem(entry.role)"
+                        class="btn btn-link nav-link"
+                        (click)="navigateTo(entry.link)">{{entry.name}}</button>
+            </li>
+        </ul>
+    </div>
+    <div class="text-right">
+        <span class="navbar-text" *ngIf="!user">
+            <login></login>
+        </span>
+        <span class="navbar-text" *ngIf="user">
+            <loggedin></loggedin>
+        </span>
+    </div>
+</nav>
+
+<span class="navbar-toggler-icon"></span>
