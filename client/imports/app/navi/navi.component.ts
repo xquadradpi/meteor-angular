@@ -33,8 +33,6 @@ export class NaviComponent implements OnInit {
         MeteorObservable.autorun().subscribe(() => {
             this.user = !!Meteor.userId();
 
-            console.log(this.user);
-
             this.naviEntries = [];
             this.naviEntries.push({name: 'Home', link: ''});
 
